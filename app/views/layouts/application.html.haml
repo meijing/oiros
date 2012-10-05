@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Oirós
+
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+
+    = csrf_meta_tags
+
+    
+
+  %body{class: "#{controller_path.split("/").join(" ")}"}
+    .container
+      = render 'header'
+ 
+      = yield
+
+    = render 'footer'
